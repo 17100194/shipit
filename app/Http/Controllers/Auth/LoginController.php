@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class LoginController extends Controller
 {
@@ -72,6 +73,13 @@ class LoginController extends Controller
         }
 
         return $this->sendFailedLoginResponse($request, 'auth.failed');
+    }
+
+    protected function sendFailedLoginResponse(Request $request, $error)
+    {
+        return redirect()->back()
+            ->withInput($request->only($this->username(), 'remember'))
+            ->withErrors([$this->username() => Lang::get($error)]);
     }
 
     public function credentials(Request $request)
