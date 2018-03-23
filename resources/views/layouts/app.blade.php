@@ -68,7 +68,10 @@
                                                         <li><a>Deliveries</a></li>
                                                         <li><a>Orders</a></li>
                                                         <li><a>Settings</a></li>
-                                                        <li><a>Logout</a></li>
+                                                        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                                        <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
+                                                            {{ csrf_field() }}
+                                                        </form>
                                                     </ul>
                                                 </li>
                                             @endguest
