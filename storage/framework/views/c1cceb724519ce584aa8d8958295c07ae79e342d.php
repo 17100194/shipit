@@ -57,13 +57,12 @@
                                     <!-- menu links -->
                                     <div class="menu-bar">
                                         <ul class="menu-links">
-                                            <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
-                                            <li><a>About</a></li>
+                                            <li><a><i class="fa fa-plane"></i> Make Money Traveling</a></li>
                                             <?php if(auth()->guard()->guest()): ?>
-                                                <li><a href="<?php echo e(url('login')); ?>">Login</a></li>
+                                            <li><a href="<?php echo e(url('login')); ?>" class="button" style="color: #fff; border-radius: 0px; width:100%; padding: 10px">Login</a></li>
                                             <?php else: ?>
                                                 <li>
-                                                    <a href="javascript:void(0)"> <?php echo e(Auth::user()->name); ?> <i class="fa fa-angle-down fa-indicator"></i></a>
+                                                    <a href="javascript:void(0)" class="button" style="color: #fff; border-radius: 0px; width:100%; padding: 10px"><i class="fa fa-user"></i> <?php echo e(Auth::user()->name); ?> <i class="fa fa-angle-down fa-indicator"></i></a>
                                                     <ul class="drop-down grid-col-2">
                                                         <li><a>Profile</a></li>
                                                         <li><a>Deliveries</a></li>

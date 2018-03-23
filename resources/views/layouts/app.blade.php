@@ -57,13 +57,12 @@
                                     <!-- menu links -->
                                     <div class="menu-bar">
                                         <ul class="menu-links">
-                                            <li><a href="{{url('/')}}">Home</a></li>
-                                            <li><a>About</a></li>
+                                            <li><a><i class="fa fa-plane"></i> Make Money Traveling</a></li>
                                             @guest
-                                                <li><a href="{{url('login')}}">Login</a></li>
+                                            <li><a href="{{url('login')}}" class="button" style="color: #fff; border-radius: 0px; width:100%; padding: 10px">Login</a></li>
                                             @else
                                                 <li>
-                                                    <a href="javascript:void(0)"> {{Auth::user()->name}} <i class="fa fa-angle-down fa-indicator"></i></a>
+                                                    <a href="javascript:void(0)"><i class="fa fa-user"></i> {{Auth::user()->name}} <i class="fa fa-angle-down fa-indicator"></i></a>
                                                     <ul class="drop-down grid-col-2">
                                                         <li><a>Profile</a></li>
                                                         <li><a>Deliveries</a></li>
